@@ -164,11 +164,12 @@ class Escape(pygame.sprite.Sprite):
         global now_level
         global levels
         if self.status == 'opened' and pygame.Rect.colliderect(hero.rect, self.rect):
-            levels[now_level+1](board, box, button, hero, escape, port_or, port_blue)
-            if now_level == 6:
+            if now_level == 8:
                 now_level = 0
+                
             else:
                 now_level += 1
+            levels[now_level](board, box, button, hero, escape, port_or, port_blue)
         
         
         
@@ -266,6 +267,7 @@ def start_leveltest(Board, box, button, escape, port_or, port_blue):
     Board.board[7] = [0,0,0,0,0,0,0,0,0,0]
     Board.board[8] = [0,0,0,0,0,0,0,0,0,0]
     Board.board[9] = [0,0,0,0,0,0,0,0,0,0]
+    box.isSelected = False
     box.rect.x = 200
     box.rect.y = 200
     button.changes = {(4, 4):[0, 2], (4, 3):[0, 2], (4, 2):[0, 2], (4, 1):[0, 2]}
@@ -286,6 +288,7 @@ def start_level1(Board, box, button, hero, escape, port_or, port_blue):
     Board.board[7] = [0,0,0,0,1,1,1,1,0,0]
     Board.board[8] = [0,0,0,0,1,1,1,1,0,0]
     Board.board[9] = [0,0,0,0,1,1,1,1,0,0]
+    box.isSelected = False
     box.rect.x = -100
     box.rect.y = -100
     button.rect.x = -100
@@ -311,6 +314,7 @@ def start_level2(Board, box, button, hero, escape, port_or, port_blue):
     Board.board[7] = [1,1,1,1,1,1,1,1,1,0]
     Board.board[8] = [0,0,0,0,0,0,0,0,0,0]
     Board.board[9] = [0,0,1,1,1,1,1,1,1,1]
+    box.isSelected = False
     box.rect.x = -100
     box.rect.y = -100
     button.rect.x = -100
@@ -336,6 +340,7 @@ def start_level3(Board, box, button, hero, escape, port_or, port_blue):
     Board.board[7] = [0,0,0,1,1,1,0,0,0,0]
     Board.board[8] = [0,0,0,1,1,1,0,0,0,0]
     Board.board[9] = [0,0,0,1,1,1,0,0,0,0]
+    box.isSelected = False
     box.rect.x = 400
     box.rect.y = 400
     button.rect.x = 450
@@ -361,6 +366,7 @@ def start_level4(Board, box, button, hero, escape, port_or, port_blue):
     Board.board[7] = [0,0,0,1,1,1,1,0,0,0]
     Board.board[8] = [0,0,0,1,1,1,1,0,0,0]
     Board.board[9] = [0,0,0,1,1,1,1,0,0,0]
+    box.isSelected = False
     box.rect.x = 450
     box.rect.y = 450
     button.rect.x = 450
@@ -386,6 +392,7 @@ def start_level5(Board, box, button, hero, escape, port_or, port_blue):
     Board.board[7] = [0,0,0,0,0,0,0,0,0,0]
     Board.board[8] = [1,1,1,1,1,1,1,1,1,1]
     Board.board[9] = [1,1,1,1,1,1,1,1,1,1]
+    box.isSelected = False
     box.rect.x = -100
     box.rect.y = -100
     button.rect.x = -100
@@ -411,6 +418,7 @@ def start_level6(Board, box, button, hero, escape, port_or, port_blue):
     Board.board[7] = [0,0,0,0,0,1,1,1,1,1]
     Board.board[8] = [0,0,0,0,0,1,1,1,1,1]
     Board.board[9] = [0,0,0,0,0,1,1,1,1,1]
+    box.isSelected = False
     box.rect.x = 150
     box.rect.y = 300
     button.rect.x = 450
@@ -425,7 +433,7 @@ def start_level6(Board, box, button, hero, escape, port_or, port_blue):
     port_blue.rect.x = 0
     port_blue.rect.y = 0
  
-def start_level7(Board, box, button, hero, escape, port_or, port_blue):
+def start_level8(Board, box, button, hero, escape, port_or, port_blue):
     Board.board[0] = [0,0,1,1,0,0,2,1,2,2]
     Board.board[1] = [0,0,1,1,0,0,1,1,0,0]
     Board.board[2] = [1,1,0,0,1,2,0,0,1,1]
@@ -436,6 +444,7 @@ def start_level7(Board, box, button, hero, escape, port_or, port_blue):
     Board.board[7] = [1,1,0,0,1,1,0,0,1,1]
     Board.board[8] = [0,0,1,1,0,0,1,1,2,2]
     Board.board[9] = [0,0,1,1,0,0,1,1,0,0]
+    box.isSelected = False
     box.rect.x = 450
     box.rect.y = 50
     button.rect.x = 225
@@ -449,6 +458,58 @@ def start_level7(Board, box, button, hero, escape, port_or, port_blue):
     port_or.rect.y = 0
     port_blue.rect.x = 0
     port_blue.rect.y = 0
+    
+def start_level7(Board, box, button, hero, escape, port_or, port_blue):
+    Board.board[0] = [0,0,0,0,0,0,0,0,0,0]
+    Board.board[1] = [2,2,2,2,2,2,2,2,2,2]
+    Board.board[2] = [1,1,1,1,1,1,1,1,1,1]
+    Board.board[3] = [1,1,1,1,1,1,1,1,1,1]
+    Board.board[4] = [1,1,1,1,1,1,1,1,1,1]
+    Board.board[5] = [0,1,1,1,1,1,1,1,1,1]
+    Board.board[6] = [1,1,1,1,1,1,1,1,1,1]
+    Board.board[7] = [1,1,1,1,1,1,1,1,1,0]
+    Board.board[8] = [1,1,1,1,1,1,1,1,1,1]
+    Board.board[9] = [1,1,1,1,1,1,1,1,1,1]
+    box.isSelected = False
+    box.rect.x = 0
+    box.rect.y = 250
+    button.rect.x = 450
+    button.rect.y = 350
+    button.changes = {(8,9):[1,2],(9,9):[1,2],'escape_open':escape}
+    hero.rect.x = 0
+    hero.rect.y = 0
+    escape.rect.x = 492
+    escape.rect.y = 448
+    port_or.rect.x = 0
+    port_or.rect.y = 0
+    port_blue.rect.x = 0
+    port_blue.rect.y = 0
+    
+def start_level9(Board, box, button, hero, escape, port_or, port_blue):
+    Board.board[0] = [0,1,2,1,1,0,0,0,1,1]
+    Board.board[1] = [0,1,2,1,0,1,0,1,0,1]
+    Board.board[2] = [0,1,2,1,0,0,1,0,0,1]
+    Board.board[3] = [0,1,2,1,0,1,0,1,0,1]
+    Board.board[4] = [0,1,1,1,1,0,0,0,1,1]
+    Board.board[5] = [0,1,1,1,1,1,1,1,1,1]
+    Board.board[6] = [0,1,1,1,1,1,1,1,1,0]
+    Board.board[7] = [1,1,1,1,1,1,1,1,1,1]
+    Board.board[8] = [1,1,1,1,1,1,1,1,1,1]
+    Board.board[9] = [2,2,2,2,2,0,1,1,1,1]
+    box.isSelected = False
+    box.rect.x = -100
+    box.rect.y = -100
+    button.rect.x = -100
+    button.rect.y = -100
+    button.changes = {}
+    hero.rect.x = 0
+    hero.rect.y = 0
+    escape.rect.x = 492
+    escape.rect.y = 448
+    port_or.rect.x = 0
+    port_or.rect.y = 0
+    port_blue.rect.x = 0
+    port_blue.rect.y = 0  
     
     
  
@@ -502,6 +563,8 @@ levels.append(start_level4)
 levels.append(start_level5)
 levels.append(start_level6)
 levels.append(start_level7)
+levels.append(start_level8)
+levels.append(start_level9)
 levels[now_level](board, box, button, hero, escape, port_or, port_blue)
 while running:
     for event in pygame.event.get():
