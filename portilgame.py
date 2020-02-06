@@ -433,7 +433,7 @@ def start_level6(Board, box, button, hero, escape, port_or, port_blue):
     port_blue.rect.x = 0
     port_blue.rect.y = 0
  
-def start_level8(Board, box, button, hero, escape, port_or, port_blue):
+def start_level9(Board, box, button, hero, escape, port_or, port_blue):
     Board.board[0] = [0,0,1,1,0,0,2,1,2,2]
     Board.board[1] = [0,0,1,1,0,0,1,1,0,0]
     Board.board[2] = [1,1,0,0,1,2,0,0,1,1]
@@ -485,7 +485,7 @@ def start_level7(Board, box, button, hero, escape, port_or, port_blue):
     port_blue.rect.x = 0
     port_blue.rect.y = 0
     
-def start_level9(Board, box, button, hero, escape, port_or, port_blue):
+def start_level8(Board, box, button, hero, escape, port_or, port_blue):
     Board.board[0] = [0,1,2,1,1,0,0,0,1,1]
     Board.board[1] = [0,1,2,1,0,1,0,1,0,1]
     Board.board[2] = [0,1,2,1,0,0,1,0,0,1]
