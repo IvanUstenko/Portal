@@ -1,3 +1,4 @@
+
 import pygame
 import os
 
@@ -349,6 +350,7 @@ def start_levelTutorial1(Board, box, button, hero, escape, port_or, port_blue):
     port_blue.rect.x = 0
     port_blue.rect.y = 0
     text = font.render('Для передвижения используются клавиши WASD\nЧтобы пройти на следующий уровень зайдите в голубую дверь', 1, (0, 255, 0))
+    print('Для передвижения используются клавиши WASD\nЧтобы пройти на следующий уровень зайдите в голубую дверь')
     
 def start_levelTutorial2(Board, box, button, hero, escape, port_or, port_blue):
     global text
@@ -377,6 +379,7 @@ def start_levelTutorial2(Board, box, button, hero, escape, port_or, port_blue):
     port_blue.rect.x = 0
     port_blue.rect.y = 0
     text = font.render('Нажмите ЛКМ, чтобы поставить синий портал\nНажмите ПКМ, чтобы поставить оранжевый портал\nЗаходя в синий портал, вы выходите из оранжевого и наоборот', 1, (0, 255, 0))
+    print('Нажмите ЛКМ, чтобы поставить синий портал Нажмите ПКМ, чтобы поставить оранжевый портал Заходя в синий портал, вы выходите из оранжевого и наоборот')
 
 def start_levelTutorial3(Board, box, button, hero, escape, port_or, port_blue):
     global text
@@ -405,6 +408,7 @@ def start_levelTutorial3(Board, box, button, hero, escape, port_or, port_blue):
     port_blue.rect.x = 0
     port_blue.rect.y = 0
     text = font.render('Красные клетки--ЛАВА\nЗаходя в неё вы будете замедляться\nЕсли остановитесь, то умрёте', 1, (0, 255, 0))
+    print('Красные клетки--ЛАВА Заходя в неё вы будете замедляться Если остановитесь, то умрёте')
     
 def start_levelTutorial4(Board, box, button, hero, escape, port_or, port_blue):
     global text
@@ -433,6 +437,7 @@ def start_levelTutorial4(Board, box, button, hero, escape, port_or, port_blue):
     port_blue.rect.x = 0
     port_blue.rect.y = 0
     text = font.render('Фиолетовые клетки--ускорители\nПопадая на них вы будете ускоряться', 1, (0, 255, 0))
+    print('Фиолетовые клетки--ускорители\nПопадая на них вы будете ускоряться')
     
 def start_levelTutorial5(Board, box, button, hero, escape, port_or, port_blue):
     global text
@@ -461,6 +466,7 @@ def start_levelTutorial5(Board, box, button, hero, escape, port_or, port_blue):
     port_blue.rect.x = 0
     port_blue.rect.y = 0
     text = font.render('С помощью ускорения вы можете пробегать по лаве', 1, (0, 255, 0))
+    print('С помощью ускорения вы можете пробегать по лаве')
     
 def start_levelTutorial6(Board, box, button, hero, escape, port_or, port_blue):
     global text
@@ -489,7 +495,7 @@ def start_levelTutorial6(Board, box, button, hero, escape, port_or, port_blue):
     port_blue.rect.x = 0
     port_blue.rect.y = 0
     text = font.render('С помощью коробок вы можете нажимать на кнопки(желтые кружочки)\nЧтобы подобрать или отпустить коробку нажмите E\nЕсли дверь закрыта, то вокруг неё красный контур, иначе -- зелёный', 1, (0, 255, 0))
-    
+    print('С помощью коробок вы можете нажимать на кнопки(желтые кружочки). Чтобы подобрать или отпустить коробку нажмите E Если дверь закрыта, то вокруг неё красный контур, иначе -- зелёный')
 
 
 def start_level1(Board, box, button, hero, escape, port_or, port_blue):
