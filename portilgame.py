@@ -256,26 +256,42 @@ class Button(pygame.sprite.Sprite):
         self.image = image_buttonoff
         return board
         
+# для создания нового уровня, надо создать функцию, создающая уровень. Ркомендуется называть её start_leveln, где n - номер уровня
+# надо добавить новую функцию в список levels в главном блоке программы
+# в классе Escape надо исправить блок:
+#if now_level == n:
+#    now_level = 0
+#else:
+    #now_level += 1
+# в now_level == n, n должно равнятся кол-ву уровней минус 1
 def start_leveltest(Board, box, button, escape, port_or, port_blue):
-    Board.board[0] = [0,0,0,0,0,0,0,0,0,0]
-    Board.board[1] = [0,0,0,0,0,0,0,0,0,0]
-    Board.board[2] = [0,0,0,0,0,0,0,0,0,0]
-    Board.board[3] = [0,0,0,0,0,0,0,0,0,0]
-    Board.board[4] = [0,0,0,0,0,0,0,0,0,0]
-    Board.board[5] = [0,0,0,0,0,0,0,0,0,0]
-    Board.board[6] = [0,0,0,0,0,0,0,0,0,0]
-    Board.board[7] = [0,0,0,0,0,0,0,0,0,0]
-    Board.board[8] = [0,0,0,0,0,0,0,0,0,0]
-    Board.board[9] = [0,0,0,0,0,0,0,0,0,0]
-    box.isSelected = False
-    box.rect.x = 200
+    Board.board[0] = [0,0,0,0,1,1,1,1,0,0]#построение поля
+    Board.board[1] = [0,0,0,0,1,1,1,1,0,0]#0 - белый цвет, стандартная панель
+    Board.board[2] = [0,0,0,0,1,1,1,1,0,0]#1 - красный цвет, лава
+    Board.board[3] = [0,0,0,0,1,1,1,1,0,0]#2 - фиолетовый цвет, ускоряющая панель
+    Board.board[4] = [0,0,0,0,1,1,1,1,0,0]
+    Board.board[5] = [0,0,0,0,1,1,1,1,0,0]
+    Board.board[6] = [0,0,0,0,1,1,1,1,0,0]
+    Board.board[7] = [0,0,0,0,1,1,1,1,0,0]
+    Board.board[8] = [0,0,0,0,1,1,1,1,0,0]
+    Board.board[9] = [0,0,0,0,1,1,1,1,0,0]
+    box.isSelected = False#
+    box.rect.x = 200 #координаты коробки
     box.rect.y = 200
-    button.changes = {(4, 4):[0, 2], (4, 3):[0, 2], (4, 2):[0, 2], (4, 1):[0, 2]}
-    port_or.rect.x = 0
+    button.rect.x = 100 #координаты кнопки
+    button.rect.y = 100
+    button.changes = {(3, 4) : [0, 2], 'escape_open':escape} #словарь, где вводятся изменения поля, при нажатие кнопки:
+    #в круглых кноках вводятся координаты клетки, сначала в каком по номеру списке она находится, потом на каком месте стоит в этом списке
+    #в квадратных скобках вводится сначала изначальное состояние клетки, потом которое должно быть после нажатия
+    #если надо, чтобы при нажатии кнопки открывалась дверь, то вводится 'escape_open':escape
+    hero.rect.x = 0 #изначальное положение персонажа
+    hero.rect.y = 0
+    escape.rect.x = 492 #координаты выхода
+    escape.rect.y = 448
+    port_or.rect.x = 0 #изначальное положение порталов
     port_or.rect.y = 0
     port_blue.rect.x = 0
     port_blue.rect.y = 0
-    
     
 def start_level1(Board, box, button, hero, escape, port_or, port_blue):
     Board.board[0] = [0,0,0,0,1,1,1,1,0,0]
@@ -433,7 +449,7 @@ def start_level6(Board, box, button, hero, escape, port_or, port_blue):
     port_blue.rect.x = 0
     port_blue.rect.y = 0
  
-def start_level9(Board, box, button, hero, escape, port_or, port_blue):
+def start_level8(Board, box, button, hero, escape, port_or, port_blue):
     Board.board[0] = [0,0,1,1,0,0,2,1,2,2]
     Board.board[1] = [0,0,1,1,0,0,1,1,0,0]
     Board.board[2] = [1,1,0,0,1,2,0,0,1,1]
@@ -485,7 +501,7 @@ def start_level7(Board, box, button, hero, escape, port_or, port_blue):
     port_blue.rect.x = 0
     port_blue.rect.y = 0
     
-def start_level8(Board, box, button, hero, escape, port_or, port_blue):
+def start_level9(Board, box, button, hero, escape, port_or, port_blue):
     Board.board[0] = [0,1,2,1,1,0,0,0,1,1]
     Board.board[1] = [0,1,2,1,0,1,0,1,0,1]
     Board.board[2] = [0,1,2,1,0,0,1,0,0,1]
@@ -565,6 +581,7 @@ levels.append(start_level6)
 levels.append(start_level7)
 levels.append(start_level8)
 levels.append(start_level9)
+#levels.append(start_leveln) - это надо прописать длядобавления нового уровня в список levels
 levels[now_level](board, box, button, hero, escape, port_or, port_blue)
 while running:
     for event in pygame.event.get():
