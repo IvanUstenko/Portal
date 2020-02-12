@@ -769,8 +769,18 @@ port_or.set_PairPortal(port_blue)
 port_blue.set_PairPortal(port_or)
 hero = Hero(all_sprites)
 all_sprites.draw(screen)
+font = pygame.font.Font(None, 13)
+text = font.render('', 1, (0, 0, 255))
+TextX,TextY = 0, 0
 now_level = 0
 levels = []
+levels.append(start_levelTutorial1)
+levels.append(start_levelTutorial2)
+levels.append(start_levelTutorial3)
+levels.append(start_levelTutorial4)
+levels.append(start_levelTutorial5)
+levels.append(start_levelTutorial6)
+
 levels.append(start_level1)
 levels.append(start_level2)
 levels.append(start_level3)
@@ -799,6 +809,7 @@ while running:
         button.unpressed(board)
     screen.fill((255,255,255))
     board.render()
+    screen.blit(text, (TextX, TextY))
     port_or.update(False, hero)
     port_blue.update(False, hero)
     if hero.health == 0:
