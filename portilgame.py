@@ -292,7 +292,206 @@ def start_leveltest(Board, box, button, escape, port_or, port_blue):
     port_or.rect.y = 0
     port_blue.rect.x = 0
     port_blue.rect.y = 0
+ 
+def start_End(Board, box, button, hero, escape, port_or, port_blue):
+    global text
+    Board.board[0] = [0,0,0,0,0,0,0,0,0,0]
+    Board.board[1] = [0,0,0,0,0,0,0,0,0,0]
+    Board.board[2] = [0,0,0,0,0,0,0,0,0,0]
+    Board.board[3] = [0,0,0,0,0,0,0,0,0,0]
+    Board.board[4] = [0,0,0,0,0,0,0,0,0,0]
+    Board.board[5] = [0,0,0,0,0,0,0,0,0,0]
+    Board.board[6] = [0,0,0,0,0,0,0,0,0,0]
+    Board.board[7] = [0,0,0,0,0,0,0,0,0,0]
+    Board.board[8] = [0,0,0,0,0,0,0,0,0,0]
+    Board.board[9] = [0,0,0,0,0,0,0,0,0,0]
+    box.isSelected = False
+    box.rect.x = -100
+    box.rect.y = -100
+    button.rect.x = -100
+    button.rect.y = -100
+    button.changes = {}
+    hero.rect.x = 0
+    hero.rect.y = 0
+    escape.rect.x = -100
+    escape.rect.y = -100
+    port_or.rect.x = 0
+    port_or.rect.y = 0
+    port_blue.rect.x = 0
+    port_blue.rect.y = 0
+    text = font.render('Вы прошли игру!!!', 1, (0, 255, 0))
     
+
+def start_levelTutorial1(Board, box, button, hero, escape, port_or, port_blue):
+    global text
+    Board.board[0] = [0,0,0,0,0,0,0,0,0,0]
+    Board.board[1] = [0,0,0,0,0,0,0,0,0,0]
+    Board.board[2] = [0,0,0,0,0,0,0,0,0,0]
+    Board.board[3] = [0,0,0,0,0,0,0,0,0,0]
+    Board.board[4] = [0,0,0,0,0,0,0,0,0,0]
+    Board.board[5] = [0,0,0,0,0,0,0,0,0,0]
+    Board.board[6] = [0,0,0,0,0,0,0,0,0,0]
+    Board.board[7] = [0,0,0,0,0,0,0,0,0,0]
+    Board.board[8] = [0,0,0,0,0,0,0,0,0,0]
+    Board.board[9] = [0,0,0,0,0,0,0,0,0,0]
+    box.isSelected = False
+    box.rect.x = -100
+    box.rect.y = -100
+    button.rect.x = -100
+    button.rect.y = -100
+    button.changes = {}
+    hero.rect.x = 0
+    hero.rect.y = 0
+    escape.rect.x = 492
+    escape.rect.y = 448
+    port_or.rect.x = 0
+    port_or.rect.y = 0
+    port_blue.rect.x = 0
+    port_blue.rect.y = 0
+    text = font.render('Для передвижения используются клавиши WASD\nЧтобы пройти на следующий уровень зайдите в голубую дверь', 1, (0, 255, 0))
+    
+def start_levelTutorial2(Board, box, button, hero, escape, port_or, port_blue):
+    global text
+    Board.board[0] = [0,0,0,0,0,0,0,0,0,0]
+    Board.board[1] = [0,0,0,0,0,0,0,0,0,0]
+    Board.board[2] = [0,0,0,0,0,0,0,0,0,0]
+    Board.board[3] = [0,0,0,0,0,0,0,0,0,0]
+    Board.board[4] = [0,0,0,0,0,0,0,0,0,0]
+    Board.board[5] = [0,0,0,0,0,0,0,0,0,0]
+    Board.board[6] = [0,0,0,0,0,0,0,0,0,0]
+    Board.board[7] = [0,0,0,0,0,0,0,0,0,0]
+    Board.board[8] = [0,0,0,0,0,0,0,0,0,0]
+    Board.board[9] = [0,0,0,0,0,0,0,0,0,0]
+    box.isSelected = False
+    box.rect.x = -100
+    box.rect.y = -100
+    button.rect.x = -100
+    button.rect.y = -100
+    button.changes = {}
+    hero.rect.x = 0
+    hero.rect.y = 0
+    escape.rect.x = 492
+    escape.rect.y = 448
+    port_or.rect.x = 0
+    port_or.rect.y = 0
+    port_blue.rect.x = 0
+    port_blue.rect.y = 0
+    text = font.render('Нажмите ЛКМ, чтобы поставить синий портал\nНажмите ПКМ, чтобы поставить оранжевый портал\nЗаходя в синий портал, вы выходите из оранжевого и наоборот', 1, (0, 255, 0))
+
+def start_levelTutorial3(Board, box, button, hero, escape, port_or, port_blue):
+    global text
+    Board.board[0] = [0,0,0,0,0,0,0,0,0,0]
+    Board.board[1] = [0,0,0,0,0,0,0,0,0,0]
+    Board.board[2] = [0,0,0,0,0,0,0,0,0,0]
+    Board.board[3] = [0,0,0,0,0,0,0,0,0,0]
+    Board.board[4] = [0,0,0,0,0,0,0,0,0,0]
+    Board.board[5] = [0,0,0,1,1,0,0,0,0,0]
+    Board.board[6] = [0,0,0,1,1,0,0,0,0,0]
+    Board.board[7] = [0,0,0,1,1,0,0,0,0,0]
+    Board.board[8] = [0,0,0,0,0,0,0,0,0,0]
+    Board.board[9] = [0,0,0,0,0,0,0,0,0,0]
+    box.isSelected = False
+    box.rect.x = -100
+    box.rect.y = -100
+    button.rect.x = -100
+    button.rect.y = -100
+    button.changes = {}
+    hero.rect.x = 0
+    hero.rect.y = 0
+    escape.rect.x = 492
+    escape.rect.y = 448
+    port_or.rect.x = 0
+    port_or.rect.y = 0
+    port_blue.rect.x = 0
+    port_blue.rect.y = 0
+    text = font.render('Красные клетки--ЛАВА\nЗаходя в неё вы будете замедляться\nЕсли остановитесь, то умрёте', 1, (0, 255, 0))
+    
+def start_levelTutorial4(Board, box, button, hero, escape, port_or, port_blue):
+    global text
+    Board.board[0] = [0,0,0,2,2,0,0,0,0,0]
+    Board.board[1] = [0,0,0,2,2,0,0,0,0,0]
+    Board.board[2] = [0,0,0,2,2,0,0,0,0,0]
+    Board.board[3] = [0,0,0,2,2,0,0,0,0,0]
+    Board.board[4] = [0,0,0,2,2,0,0,0,0,0]
+    Board.board[5] = [0,0,0,2,2,0,0,0,0,0]
+    Board.board[6] = [0,0,0,2,2,0,0,0,0,0]
+    Board.board[7] = [0,0,0,2,2,0,0,0,0,0]
+    Board.board[8] = [0,0,0,2,2,0,0,0,0,0]
+    Board.board[9] = [0,0,0,0,0,0,0,0,0,0]
+    box.isSelected = False
+    box.rect.x = -100
+    box.rect.y = -100
+    button.rect.x = -100
+    button.rect.y = -100
+    button.changes = {}
+    hero.rect.x = 0
+    hero.rect.y = 0
+    escape.rect.x = 492
+    escape.rect.y = 448
+    port_or.rect.x = 0
+    port_or.rect.y = 0
+    port_blue.rect.x = 0
+    port_blue.rect.y = 0
+    text = font.render('Фиолетовые клетки--ускорители\nПопадая на них вы будете ускоряться', 1, (0, 255, 0))
+    
+def start_levelTutorial5(Board, box, button, hero, escape, port_or, port_blue):
+    global text
+    Board.board[0] = [0,0,0,2,2,1,1,0,0,0]
+    Board.board[1] = [0,0,0,2,2,1,1,0,0,0]
+    Board.board[2] = [0,0,0,2,2,1,1,0,0,0]
+    Board.board[3] = [0,0,0,2,2,1,1,0,0,0]
+    Board.board[4] = [2,2,2,2,2,1,1,0,0,0]
+    Board.board[5] = [2,2,2,2,2,1,1,0,0,0]
+    Board.board[6] = [0,0,0,2,2,1,1,0,0,0]
+    Board.board[7] = [0,0,0,2,2,1,1,0,0,0]
+    Board.board[8] = [0,0,0,2,2,1,1,0,0,0]
+    Board.board[9] = [0,0,0,0,0,1,1,0,0,0]
+    box.isSelected = False
+    box.rect.x = -100
+    box.rect.y = -100
+    button.rect.x = -100
+    button.rect.y = -100
+    button.changes = {}
+    hero.rect.x = 0
+    hero.rect.y = 0
+    escape.rect.x = 492
+    escape.rect.y = 448
+    port_or.rect.x = 0
+    port_or.rect.y = 0
+    port_blue.rect.x = 0
+    port_blue.rect.y = 0
+    text = font.render('С помощью ускорения вы можете пробегать по лаве', 1, (0, 255, 0))
+    
+def start_levelTutorial6(Board, box, button, hero, escape, port_or, port_blue):
+    global text
+    Board.board[0] = [0,0,0,0,0,0,0,0,0,0]
+    Board.board[1] = [0,0,0,0,0,0,0,0,0,0]
+    Board.board[2] = [0,0,0,0,0,0,0,0,0,0]
+    Board.board[3] = [0,0,0,0,0,0,0,0,0,0]
+    Board.board[4] = [0,0,0,0,0,0,0,0,0,0]
+    Board.board[5] = [0,0,0,0,0,0,0,0,0,0]
+    Board.board[6] = [0,0,0,0,0,0,0,0,0,0]
+    Board.board[7] = [0,0,0,0,0,0,0,0,0,0]
+    Board.board[8] = [0,0,0,0,0,0,0,0,0,0]
+    Board.board[9] = [0,0,0,0,0,0,0,0,0,0]
+    box.isSelected = False
+    box.rect.x = 400
+    box.rect.y = 400
+    button.rect.x = 450
+    button.rect.y = 0
+    button.changes = {'escape_open':escape}
+    hero.rect.x = 0
+    hero.rect.y = 0
+    escape.rect.x = 0
+    escape.rect.y = 448
+    port_or.rect.x = 0
+    port_or.rect.y = 0
+    port_blue.rect.x = 0
+    port_blue.rect.y = 0
+    text = font.render('С помощью коробок вы можете нажимать на кнопки(желтые кружочки)\nЧтобы подобрать или отпустить коробку нажмите E\nЕсли дверь закрыта, то вокруг неё красный контур, иначе -- зелёный', 1, (0, 255, 0))
+    
+
+
 def start_level1(Board, box, button, hero, escape, port_or, port_blue):
     Board.board[0] = [0,0,0,0,1,1,1,1,0,0]
     Board.board[1] = [0,0,0,0,1,1,1,1,0,0]
