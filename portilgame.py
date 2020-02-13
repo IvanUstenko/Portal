@@ -812,12 +812,13 @@ while running:
     if hero.health == 0:
         hero.health = 100
         start_leveltest(board, box)
+    if hero.inertia == -2 or (hero.inertia == 0 and screen.get_at(coords) == (255,0,0,255)):
+        levels[now_level](board, box, button, hero, escape, port_or, port_blue)
     hero.move(s, screen.get_at(coords))
     box.update(s[pygame.K_e], hero.rect)
     all_sprites.draw(screen)
-    if hero.inertia == -2:
-        levels[now_level](board, box, button, hero, escape, port_or, port_blue)
     escape.update(board, box, button, hero, escape)
     clock.tick(60)
     pygame.display.flip()
 pygame.quit()
+
