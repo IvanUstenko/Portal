@@ -165,11 +165,7 @@ class Escape(pygame.sprite.Sprite):
         global now_level
         global levels
         if self.status == 'opened' and pygame.Rect.colliderect(hero.rect, self.rect):
-            if now_level == 8:
-                now_level = 0
-                
-            else:
-                now_level += 1
+            now_level += 1
             levels[now_level](board, box, button, hero, escape, port_or, port_blue)
         
         
@@ -258,13 +254,7 @@ class Button(pygame.sprite.Sprite):
         return board
         
 # для создания нового уровня, надо создать функцию, создающая уровень. Ркомендуется называть её start_leveln, где n - номер уровня
-# надо добавить новую функцию в список levels в главном блоке программы
-# в классе Escape надо исправить блок:
-#if now_level == n:
-#    now_level = 0
-#else:
-    #now_level += 1
-# в now_level == n, n должно равнятся кол-ву уровней минус 1
+# надо добавить новую функцию в список levels в главном блоке программы, но она не должна добавлятся после start_End()
 def start_leveltest(Board, box, button, escape, port_or, port_blue):
     Board.board[0] = [0,0,0,0,1,1,1,1,0,0]#построение поля
     Board.board[1] = [0,0,0,0,1,1,1,1,0,0]#0 - белый цвет, стандартная панель
@@ -797,6 +787,7 @@ levels.append(start_level7)
 levels.append(start_level8)
 levels.append(start_level9)
 #levels.append(start_leveln) - это надо прописать длядобавления нового уровня в список levels
+levels.append(start_End)
 levels[now_level](board, box, button, hero, escape, port_or, port_blue)
 while running:
     for event in pygame.event.get():
